@@ -4,8 +4,6 @@ import {
   Route,
   Routes,
   Navigate,
-  redirect,
-  Switch,
 } from 'react-router-dom';
 
 import './index.css';
@@ -55,7 +53,7 @@ function App() {
   return (
     <Fragment>
       <Router>
-        <Switch>
+        <Routes>
           <Route
             exact
             path='/signup'
@@ -92,7 +90,7 @@ function App() {
 
           <Route path='/movies/:summaryId' element={<SummaryDetail />} />
           <Route path='*' element={<NotFound />} />
-        </Switch>
+        </Routes>
       </Router>
     </Fragment>
   );
