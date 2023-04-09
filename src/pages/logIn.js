@@ -54,10 +54,17 @@ function Login(props) {
     const data = await response.json();
     ctx.token = data.token;
     if (data.success) {
+      const limit = {
+        limitHomePage: 9,
+        limitMoviesPage: 4,
+        limitTVSeries: 4,
+      };
+
       ctx.isAuth = true;
       localStorage.setItem('jwt', data.token);
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('loggedInUser', data.userName);
+      localStorage.setItem('pageLimit', JSON.stringify(limit));
       props.onChangeUserStatus(ctx.isAuth);
       navigate('/');
     } else {
