@@ -1,0 +1,115 @@
+/* 
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+
+img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.slide--container {
+  position: relative;
+  z-index: 1;
+  width: 120%;
+  left: -1rem;
+}
+
+.slick-track {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.slide--container h1 {
+  margin-bottom: 2.4rem;
+  position: relative;
+  left: 2rem;
+}
+
+/*****************************************/
+/* SECTION ARRANGING MOVIE DATA ON IMAGE */
+/*****************************************/
+.movie--content h3,
+.movie--content h2,
+.show--summary__container h2 {
+  font-weight: lighter;
+}
+
+.movie--contents {
+  position: relative;
+}
+
+.movie--contents:hover img {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.movie--contents:hover .show--summary__container {
+  opacity: 1;
+}
+
+.movie--content div {
+  display: flex;
+
+  gap: 2.4rem;
+}
+
+.bookmark--icons {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  padding: 1.6rem;
+  background-color: #161d2f;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.bookmark--icon {
+  cursor: pointer;
+}
+
+.bookmark--icons:hover {
+  background-color: #9892928a;
+}
+
+/*****************************************/
+/* SECTION DIFFERENT MOVIE DATA */
+/*****************************************/
+.trending--movie__content .movie--content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.not--trending__contents .show--summary__container {
+  position: absolute;
+  bottom: 12rem;
+  left: 7rem;
+}
+
+.show--summary__container {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.trending--movie__content .show--summary__container {
+  position: absolute;
+  bottom: 12rem;
+  left: 15rem;
+}
+
+/******************************/
+/* SECTION MEDIA QUERY TABLET */
+/******************************/
+
+/* 700px */
+@media (max-width: 700px) {
+  .slide--container {
+    width: 140%;
+  }
+}

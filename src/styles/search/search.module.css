@@ -1,0 +1,114 @@
+/* 
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+
+.form input {
+  position: absolute;
+  background-color: #161d2f;
+  border: none;
+  width: 70rem;
+  height: 100%;
+  border-radius: 2rem;
+
+  /* z-index: -1; */
+
+  padding: 2.4rem 8rem;
+  font-size: 2.4rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* border-color: #4caf50;
+   */
+input:focus {
+  outline: none;
+}
+
+.search--container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.search--icon {
+  left: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.without--filter.form {
+  position: relative;
+  top: 1rem;
+}
+
+.filter--icon {
+  filter: invert(99%) sepia(99%) saturate(21%) hue-rotate(214deg)
+    brightness(104%) contrast(100%);
+  cursor: pointer;
+}
+
+/*****************************/
+/* SECTION FILTER OPTIONS */
+/*****************************/
+.filter--options {
+  position: absolute;
+  z-index: 2;
+  background-color: #161d2f;
+  padding-inline: 3.2rem;
+  padding-bottom: 3.2rem;
+  right: 0rem;
+  top: 7rem;
+}
+
+.filter--options h2 {
+  font-weight: lighter;
+  color: #5a698f;
+  cursor: pointer;
+}
+
+.filter--options h2:hover {
+  color: #fc4747;
+}
+
+.filter--options li {
+  font-weight: lighter;
+  color: #5a698f;
+  cursor: pointer;
+
+  font-size: 2.4rem;
+}
+
+.filter--options li:hover {
+  color: #fc4747;
+}
+
+.filter--options h1 {
+  margin-bottom: 1.2rem;
+}
+
+.filter--options .active {
+  color: #ffffff;
+}
+
+/******************************/
+/* SECTION MEDIA QUERY TABLET */
+/******************************/
+
+/* 700px */
+@media (max-width: 700px) {
+  .form input {
+    width: 50rem;
+  }
+}

@@ -1,0 +1,119 @@
+/* 
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+
+.active {
+  filter: invert(99%) sepia(99%) saturate(21%) hue-rotate(214deg)
+    brightness(104%) contrast(100%);
+}
+
+.nav--icon {
+  cursor: pointer;
+}
+
+.nav--icon:hover {
+  filter: invert(39%) sepia(90%) saturate(2734%) hue-rotate(336deg)
+    brightness(103%) contrast(103%);
+}
+
+.movies--container {
+  width: 130rem;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 4.8rem; */
+}
+
+.all--movies__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+
+  margin-block: 2.4rem;
+}
+
+h1 {
+  font-weight: lighter;
+
+  margin-bottom: 2.4rem;
+  margin-top: 3.2rem;
+}
+
+.more--button {
+  margin-top: 3.6rem;
+  padding: 2.4rem;
+  min-width: 10%;
+  margin: auto;
+  border-radius: 1.6rem;
+
+  background-color: #161d2f;
+  color: #fff;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+}
+
+.more--button:hover,
+.more--button:link {
+  color: #161d2f;
+  background-color: #fff;
+}
+
+/******************************/
+/* SECTION SUMMARY CONTAINER */
+/******************************/
+.summary--container {
+  width: 80%;
+  margin: auto;
+
+  padding-top: 4.8rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.2rem;
+}
+
+.summary--container h2 {
+  font-weight: lighter;
+}
+
+/******************************/
+/* SECTION MEDIA QUERY TABLET */
+/******************************/
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .movies--container {
+    width: 120rem;
+    margin: auto;
+  }
+
+  .all--movies__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .movies--container {
+    width: 90rem;
+  }
+}
+
+/* 700px */
+@media (max-width: 700px) {
+  .all--movies__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movies--container {
+    width: 100%;
+  }
+}
