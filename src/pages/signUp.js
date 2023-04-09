@@ -41,13 +41,16 @@ function SignUp(props) {
   };
 
   const onSendFormData = async (inputData) => {
-    const response = await fetch('http://localhost:8080/user/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inputData),
-    });
+    const response = await fetch(
+      'https://entertainment-app.onrender.com/user/signup',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputData),
+      }
+    );
     const data = await response.json();
     if (data.success) {
       // TODO i need to show a pop up that the signup was successful that will display for like 3seconds by a setTimeOut function

@@ -13,7 +13,9 @@ function SummaryDetail() {
 
   const loadMovieSummary = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/movies/${summaryId}`);
+      const response = await fetch(
+        `https://entertainment-app.onrender.com/movies/${summaryId}`
+      );
 
       const data = await response.json();
 

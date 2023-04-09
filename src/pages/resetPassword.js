@@ -49,14 +49,17 @@ function ResetPassword() {
   };
 
   const onFormSubmitHandler = async (inputData) => {
-    const response = await fetch('http://localhost:8080/user/reset-password', {
-      method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inputData),
-    });
+    const response = await fetch(
+      'https://entertainment-app.onrender.com/user/reset-password',
+      {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputData),
+      }
+    );
 
     const data = await response.json();
     if (data.success) {

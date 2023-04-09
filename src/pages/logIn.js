@@ -41,13 +41,16 @@ function Login(props) {
   };
 
   const onSendFormData = async (inputData) => {
-    const response = await fetch('http://localhost:8080/user/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(inputData),
-    });
+    const response = await fetch(
+      'https://entertainment-app.onrender.com/user/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inputData),
+      }
+    );
     const data = await response.json();
     ctx.token = data.token;
     if (data.success) {

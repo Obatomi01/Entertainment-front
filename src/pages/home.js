@@ -56,11 +56,12 @@ function Home() {
     localStorage.setItem('pageLimit', JSON.stringify(limit));
     const url =
       year || rating
-        ? `http://localhost:8080/movies?year=${year}&rating=${encodeURIComponent(
+        ? `https://entertainment-app.onrender.com/movies?year=${year}&rating=${encodeURIComponent(
             rating
           )}&limit=${limit.limitHomePage}`
-        : `http://localhost:8080/movies?limit=${limit.limitHomePage}`;
+        : `https://entertainment-app.onrender.com/movies?limit=${limit.limitHomePage}`;
 
+    console.log(url);
     try {
       const res = await fetch(url, {
         headers: {

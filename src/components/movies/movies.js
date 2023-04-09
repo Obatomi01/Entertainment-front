@@ -26,13 +26,16 @@ const Movies = (props) => {
     };
 
     if (selectedObjectId) {
-      const response = await fetch('http://localhost:8080/movies/bookmark', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(movieData),
-      });
+      const response = await fetch(
+        'https://entertainment-app.onrender.com/movies/bookmark',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(movieData),
+        }
+      );
 
       const data = await response.json();
       if (data) {

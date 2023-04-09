@@ -25,7 +25,7 @@ function ForgotPassword() {
 
   const onFormSubmitHandler = async (inputData) => {
     const response = await fetch(
-      'http://localhost:8080/user/request-password-reset',
+      'https://entertainment-app.onrender.com/user/request-password-reset',
       {
         method: 'POST',
         headers: {

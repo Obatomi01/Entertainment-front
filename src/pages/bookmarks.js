@@ -26,7 +26,9 @@ function Bookmark() {
   const loadBookmarkedMovies = async () => {
     setShowSpinner(true);
     try {
-      const res = await fetch('http://localhost:8080/movies/bookmarks');
+      const res = await fetch(
+        'https://entertainment-app.onrender.com/movies/bookmarks'
+      );
       const data = await res.json();
       setShowSpinner(false);
       setBookmarked(data.data);

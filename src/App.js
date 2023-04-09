@@ -35,7 +35,7 @@ function App() {
   const loadMovies = async (token) => {
     if (!token) return;
     try {
-      const res = await fetch(`http://localhost:8080/movies`, {
+      const res = await fetch(`https://entertainment-app.onrender.com/movies`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

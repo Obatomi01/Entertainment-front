@@ -16,7 +16,7 @@ export const loadMovies = async (
 ) => {
   try {
     const response = await fetch(
-      `http://localhost:8080/movies?limit=${limit}&category=${category}`,
+      `https://entertainment-app.onrender.com/movies?limit=${limit}&category=${category}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
