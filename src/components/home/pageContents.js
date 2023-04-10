@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Movies from '../movies/movies';
 
 import styles from '../../styles/home/home.module.css';
@@ -12,10 +12,20 @@ import { ReactComponent as Spinner } from '../../assets/loading-spinner.svg';
  *
  */
 function PageContent(props) {
+  // const [showSpinner, setShowSpinner] = useState(true);
+
+  // useEffect(() => {
+  //   if (props.contentArray.length > 0) {
+  //     setShowSpinner(false);
+  //   }
+  // }, [props.contentArray]);
+
   return (
     <Fragment>
       <h1>{props.title}</h1>
-      {props.contentArray.length > 0 ? (
+      {props.onShowSpinner ? (
+        <Spinner className='spinner' />
+      ) : props.contentArray.length > 0 ? (
         <ul className={styles['all--movies__container']}>
           {props.contentArray.map((movie) => (
             <Movies
@@ -33,7 +43,7 @@ function PageContent(props) {
           ))}
         </ul>
       ) : (
-        <Spinner className='spinner' />
+        <h1>No item found</h1>
       )}
     </Fragment>
   );

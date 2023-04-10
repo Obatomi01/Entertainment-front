@@ -62,11 +62,13 @@ function Bookmark() {
             title='Bookmarked TV Series'
             contentArray={bookmarkedTvSeries}
             onBookmark={changeIsBookmark}
+            onShowSpinner={showSpinner}
           />
           <PageContent
             title='Bookmarked Movies'
             contentArray={bookmarkedMovies}
             onBookmark={changeIsBookmark}
+            onShowSpinner={showSpinner}
           />
         </div>
       )}

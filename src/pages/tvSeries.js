@@ -19,6 +19,8 @@ function TvSeries() {
   const [showMoreButton, setMoreButton] = useState(true);
   const [fetchedTvSeries, setFetchedTvSeries] = useState([]);
 
+  const [showSpinner, setShowSpinner] = useState(true);
+
   const token = localStorage.getItem('jwt');
   limit = JSON.parse(localStorage.getItem('pageLimit'));
 
@@ -31,6 +33,7 @@ function TvSeries() {
         token,
         'TV Series'
       );
+      setShowSpinner(false);
       setFetchedTvSeries(result.data.tvSeriesCategory);
       setMoreButton(result.showMore);
     };
@@ -76,6 +79,7 @@ function TvSeries() {
             token,
             'TV Series'
           )}
+          onShowSpinner={showSpinner}
         />
         {showMoreButton ? (
           <button

@@ -20,6 +20,8 @@ function MoviesPage() {
   const [showMoreButton, setMoreButton] = useState(true);
   const [fetchedMovies, setFetchedMovies] = useState([]);
 
+  const [showSpinner, setShowSpinner] = useState(true);
+
   const token = localStorage.getItem('jwt');
   limit = JSON.parse(localStorage.getItem('pageLimit'));
 
@@ -32,6 +34,7 @@ function MoviesPage() {
         token,
         'Movie'
       );
+      setShowSpinner(false);
       setFetchedMovies(result.data.movieCategory);
       setMoreButton(result.showMore);
     };
@@ -86,6 +89,7 @@ function MoviesPage() {
             token,
             'Movie'
           )}
+          onShowSpinner={showSpinner}
         />
         {showMoreButton ? (
           <button
