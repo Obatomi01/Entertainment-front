@@ -66,6 +66,16 @@ const Movies = (props) => {
       <div className={styles['show--summary__container']}>
         <h2>show summary</h2>
       </div>
+
+      <div className={`${styles['movie--content']} `}>
+        <div>
+          <h3>{props.year}</h3>
+          <h3>{props.category}</h3>
+          <h3>{props.rating}</h3>
+        </div>
+        <h2>{props.title}</h2>
+      </div>
+
       <button
         className={styles['bookmark--icons']}
         onClick={onBookmarkHandler}
@@ -77,24 +87,17 @@ const Movies = (props) => {
             onClick={onBookmarkHandler}
             data-id={props.id}
             data-bookmark={props.isBookmarked}
+            style={{ pointerEvents: 'visiblePainted' }}
           />
         ) : (
           <FullBookmarkIcon
             onClick={onBookmarkHandler}
             data-id={props.id}
             data-bookmark={props.isBookmarked}
+            style={{ pointerEvents: 'visiblePainted' }}
           />
         )}
       </button>
-
-      <div className={`${styles['movie--content']} `}>
-        <div>
-          <h3>{props.year}</h3>
-          <h3>{props.category}</h3>
-          <h3>{props.rating}</h3>
-        </div>
-        <h2>{props.title}</h2>
-      </div>
     </li>
   );
 };

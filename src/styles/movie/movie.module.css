@@ -42,7 +42,7 @@ img {
   position: relative;
 }
 
-.movie--contents:hover img {
+.movie--contents img:hover {
   opacity: 0.3;
   cursor: pointer;
 }
@@ -58,15 +58,16 @@ img {
 }
 
 .bookmark--icons {
-  position: absolute;
+  /* position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 2rem; */
 
   padding: 1.6rem;
   background-color: #161d2f;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   cursor: pointer;
   border: none;
+  width: 100%;
 }
 
 .bookmark--icon {
@@ -82,7 +83,7 @@ img {
 /*****************************************/
 .trending--movie__content .movie--content {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   left: 2rem;
 }
 

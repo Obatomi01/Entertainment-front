@@ -80,8 +80,10 @@ function TvSeries() {
             'TV Series'
           )}
           onShowSpinner={showSpinner}
+          onShowMoreButton={showMoreButton}
+          onShowMoreMovies={showMoreMovies}
         />
-        {showMoreButton ? (
+        {/* {showMoreButton ? (
           <button
             type='button'
             onClick={showMoreMovies}
@@ -91,7 +93,7 @@ function TvSeries() {
           </button>
         ) : (
           ''
-        )}
+        )} */}
       </div>
     </section>
   );

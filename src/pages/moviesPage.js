@@ -90,8 +90,10 @@ function MoviesPage() {
             'Movie'
           )}
           onShowSpinner={showSpinner}
+          onShowMoreButton={showMoreButton}
+          onShowMoreMovies={showMoreMovies}
         />
-        {showMoreButton ? (
+        {/* {showMoreButton ? (
           <button
             type='button'
             onClick={showMoreMovies}
@@ -101,7 +103,7 @@ function MoviesPage() {
           </button>
         ) : (
           ''
-        )}
+        )} */}
       </div>
     </section>
   );

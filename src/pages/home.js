@@ -140,35 +140,37 @@ function Home() {
         {showSpinner ? (
           <Spinner className='spinner' />
         ) : searchResults.length > 0 ? (
-          <ul className={styles['all--movies__container']}>
-            {searchResults.map((movie, i) => (
-              <Movies
-                key={i}
-                title={movie.title}
-                image={movie.thumbnail.regular.large.replace('./assets', '')}
-                isBookmarked={movie.isBookmarked}
-                year={movie.year}
-                category={movie.category}
-                onBookmark={loadMovies}
-                id={movie._id}
-                dataArrangement='not--trending__contents'
-                rating={movie.rating}
-              />
-            ))}
-          </ul>
+          <div className={styles['movies--content__container']}>
+            <ul className={styles['all--movies__container']}>
+              {searchResults.map((movie, i) => (
+                <Movies
+                  key={i}
+                  title={movie.title}
+                  image={movie.thumbnail.regular.large.replace('./assets', '')}
+                  isBookmarked={movie.isBookmarked}
+                  year={movie.year}
+                  category={movie.category}
+                  onBookmark={loadMovies}
+                  id={movie._id}
+                  dataArrangement='not--trending__contents'
+                  rating={movie.rating}
+                />
+              ))}
+            </ul>
+            {showMoreButton ? (
+              <button
+                type='button'
+                onClick={onShowMoreMoviesHandler}
+                className={styles['more--button']}
+              >
+                See More
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
         ) : (
           <div>No item Found</div>
-        )}
-        {showMoreButton ? (
-          <button
-            type='button'
-            onClick={onShowMoreMoviesHandler}
-            className={styles['more--button']}
-          >
-            See More
-          </button>
-        ) : (
-          ''
         )}
       </div>
     </section>
