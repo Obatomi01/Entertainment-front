@@ -47,8 +47,13 @@ img {
   cursor: pointer;
 }
 
-.movie--contents:hover .show--summary__container {
+.show--summary__container:hover,
+.movie--contents img:hover ~ .show--summary__container {
   opacity: 1;
+}
+
+.movie--contents .show--summary__container h2:hover ~ img {
+  opacity: 0.3;
 }
 
 .movie--content div {
@@ -64,7 +69,8 @@ img {
 
   padding: 1.6rem;
   background-color: #161d2f;
-  /* border-radius: 50%; */
+  border-radius: 2rem;
+  margin-top: 1.2rem;
   cursor: pointer;
   border: none;
   width: 100%;
@@ -83,13 +89,13 @@ img {
 /*****************************************/
 .trending--movie__content .movie--content {
   position: absolute;
-  bottom: 6rem;
+  bottom: 8rem;
   left: 2rem;
 }
 
 .not--trending__contents .show--summary__container {
   position: absolute;
-  bottom: 12rem;
+  bottom: 19rem;
   left: 7rem;
 }
 
@@ -100,7 +106,7 @@ img {
 
 .trending--movie__content .show--summary__container {
   position: absolute;
-  bottom: 12rem;
+  bottom: 17rem;
   left: 15rem;
 }
 
@@ -112,5 +118,9 @@ img {
 @media (max-width: 700px) {
   .slide--container {
     width: 140%;
+  }
+
+  .movie--contents img:hover ~ .show--summary__container {
+    opacity: 0;
   }
 }

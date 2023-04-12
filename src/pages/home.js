@@ -87,11 +87,6 @@ function Home() {
     loadMovies();
   };
 
-  const onShowAllFilterHandler = () => {
-    navigate({ search: '' });
-    setSearchResults(searchResults);
-  };
-
   /**
    * @param {any} parameter letters entered by the user
    *  @return {searchResults}
@@ -130,7 +125,6 @@ function Home() {
         <h1 className='no--margin__texts'>Welcome {userName}</h1>
         <Search
           onSearch={onChangeSearchResults}
-          onShowAllFilter={onShowAllFilterHandler}
           showFilter={true}
           searchPlaceholder='Search for movies or TV series'
           ref={searchRef}
