@@ -93,20 +93,21 @@ function Home() {
   
    */
   const onChangeSearchResults = (input) => {
+    const correctInputFormat = input.toLowerCase();
     const searchParams = new URLSearchParams(location.search);
 
     const year = searchParams.get('year');
 
     const possibleOptions = year === null ? moviesResult : searchResults;
 
-    const inputLength = input.length;
+    const inputLength = correctInputFormat.length;
     const searchMovies = possibleOptions.filter((movie) => {
       const searchArray = movie.title.toLowerCase().split(' ');
 
       let compareLetter;
       for (let letter of searchArray) {
         compareLetter = letter.slice(0, inputLength);
-        if (compareLetter === input) return true;
+        if (compareLetter === correctInputFormat) return true;
       }
     });
     setSearchResults(searchMovies);
