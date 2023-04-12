@@ -120,7 +120,7 @@ img {
     width: 140%;
   }
 
-  .movie--contents img:hover ~ .show--summary__container {
+  .show--summary__container {
     opacity: 0;
   }
 }
