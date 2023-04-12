@@ -15,6 +15,10 @@
   cursor: pointer;
 }
 
+.logout--btn {
+  transform: scale(0.7);
+}
+
 .nav--icon:hover {
   filter: invert(39%) sepia(90%) saturate(2734%) hue-rotate(336deg)
     brightness(103%) contrast(103%);

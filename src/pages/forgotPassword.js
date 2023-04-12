@@ -8,10 +8,13 @@ import Error from '../components/util/error';
 import styles from '../styles/signUp/signUp.module.css';
 import SuccessMessage from '../components/util/successMessage';
 
+import { ReactComponent as Spinner } from '../assets/loading-spinner.svg';
+
 let errMessage;
 function ForgotPassword() {
   const [showError, setShowError] = useState(false);
   const [showEmailSuccessMessage, setShowEmailSuccessMessage] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email address').required('Required'),
@@ -24,6 +27,8 @@ function ForgotPassword() {
   const initialFormValues = { email: '' };
 
   const onFormSubmitHandler = async (inputData) => {
+    setShowError(false);
+    setShowSpinner(true);
     const response = await fetch(
       'https://entertainment-app.onrender.com/user/request-password-reset',
       {
@@ -35,6 +40,7 @@ function ForgotPassword() {
       }
     );
     const data = await response.json();
+    setShowSpinner(false);
     if (data.success) {
       setShowEmailSuccessMessage(true);
       setTimeout(() => {
@@ -52,6 +58,7 @@ function ForgotPassword() {
         <SuccessMessage onAddMessage='Email sent successfully' />
       )}
       {showError && <Error onAddMessage={errMessage} />}
+      {showSpinner && <Spinner className='spinner' />}
       <LoginContent
         title='Reset Password'
         showOtherOptions={false}

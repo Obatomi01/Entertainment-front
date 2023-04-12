@@ -8,6 +8,7 @@ import { MyContext } from '../components/util/ctx';
 import LoginContent from '../components/signIn/loginContent';
 import Error from '../components/util/error';
 
+import { ReactComponent as Spinner } from '../assets/loading-spinner.svg';
 /**
  *
  * @param {*} props
@@ -19,6 +20,8 @@ function Login(props) {
   const navigate = useNavigate();
 
   const [loginError, setLoginError] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
+
   // Yup package
   const passwordRegExp =
     /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[.,?/@"<>{[}!$%^*&']).{6,}$/;
@@ -41,6 +44,8 @@ function Login(props) {
   };
 
   const onSendFormData = async (inputData) => {
+    setLoginError(false);
+    setShowSpinner(true);
     const response = await fetch(
       'https://entertainment-app.onrender.com/user/login',
       {
@@ -52,6 +57,7 @@ function Login(props) {
       }
     );
     const data = await response.json();
+    setShowSpinner(false);
     ctx.token = data.token;
     if (data.success) {
       const limit = {
@@ -79,6 +85,7 @@ function Login(props) {
   return (
     <section className={styles['section--container']}>
       {loginError && <Error onAddMessage='Incorrect email or password!!' />}
+      {showSpinner && <Spinner className='spinner' />}
       <LoginContent
         title='Log in'
         showOtherOptions={false}

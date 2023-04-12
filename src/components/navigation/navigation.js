@@ -75,8 +75,8 @@ function Navigation(props) {
         </li>
       </ul>
 
-      <button onClick={onLogOutHandler}>
-        <LogOut className={styles['nav--icon']} />
+      <button onClick={onLogOutHandler} className={styles['logout--btn']}>
+        <LogOut className={`${styles['nav--icon']}`} />
       </button>
     </nav>
   );

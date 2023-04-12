@@ -189,6 +189,10 @@
   .sign-up__container {
     width: 40%;
   }
+
+  .show--password__btns {
+    bottom: 7rem;
+  }
 }
 
 /* 700px */
