@@ -224,3 +224,14 @@ h2 {
     max-width: 47rem;
   }
 }
+
+/* 500px */
+@media (max-width: 400px) {
+  html {
+    font-size: 37.5%;
+  }
+
+  /* .app--container {
+    max-width: 37rem;
+  } */
+}
