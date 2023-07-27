@@ -221,12 +221,12 @@ h2 {
   }
 
   .app--container {
-    max-width: 47rem;
+    max-width: 90%;
   }
 }
 
 /* 500px */
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   html {
     font-size: 37.5%;
   }
