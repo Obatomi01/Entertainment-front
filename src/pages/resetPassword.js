@@ -50,7 +50,7 @@ function ResetPassword() {
 
   const onFormSubmitHandler = async (inputData) => {
     const response = await fetch(
-      'https://entertainment-app.onrender.com/user/reset-password',
+      'https://entertainment-app-tomisin.vercel.app/user/reset-password',
       {
         method: 'PUT',
         headers: {

@@ -34,11 +34,14 @@ function App() {
   const loadMovies = async (token) => {
     if (!token) return;
     try {
-      const res = await fetch(`https://entertainment-app.onrender.com/movies`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `https://entertainment-app-tomisin.vercel.app/movies`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       setIsAuth(data.isAuth);
     } catch (err) {

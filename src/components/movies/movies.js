@@ -27,7 +27,7 @@ const Movies = (props) => {
 
     if (selectedObjectId) {
       const response = await fetch(
-        'https://entertainment-app.onrender.com/movies/bookmark',
+        'https://entertainment-app-tomisin.vercel.app/movies/bookmark',
         {
           method: 'POST',
           headers: {

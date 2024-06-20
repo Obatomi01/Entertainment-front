@@ -27,7 +27,7 @@ function Bookmark() {
     setShowSpinner(true);
     try {
       const res = await fetch(
-        'https://entertainment-app.onrender.com/movies/bookmarks'
+        'https://entertainment-app-tomisin.vercel.app/movies/bookmarks'
       );
       const data = await res.json();
       setShowSpinner(false);

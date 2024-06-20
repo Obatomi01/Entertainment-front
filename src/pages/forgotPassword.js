@@ -30,7 +30,7 @@ function ForgotPassword() {
     setShowError(false);
     setShowSpinner(true);
     const response = await fetch(
-      'https://entertainment-app.onrender.com/user/request-password-reset',
+      'https://entertainment-app-tomisin.vercel.app/user/request-password-reset',
       {
         method: 'POST',
         headers: {

@@ -56,10 +56,10 @@ function Home() {
     localStorage.setItem('pageLimit', JSON.stringify(limit));
     const url =
       year || rating
-        ? `https://entertainment-app.onrender.com/movies?year=${year}&rating=${encodeURIComponent(
+        ? `https://entertainment-app-tomisin.vercel.app/movies?year=${year}&rating=${encodeURIComponent(
             rating
           )}&limit=${limit.limitHomePage}`
-        : `https://entertainment-app.onrender.com/movies?limit=${limit.limitHomePage}`;
+        : `https://entertainment-app-tomisin.vercel.app/movies?limit=${limit.limitHomePage}`;
 
     console.log(url);
     try {

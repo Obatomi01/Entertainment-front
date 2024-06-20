@@ -14,7 +14,7 @@ function SummaryDetail() {
   const loadMovieSummary = async () => {
     try {
       const response = await fetch(
-        `https://entertainment-app.onrender.com/movies/${summaryId}`
+        `https://entertainment-app-tomisin.vercel.app/movies/${summaryId}`
       );
 
       const data = await response.json();

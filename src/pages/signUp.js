@@ -48,7 +48,7 @@ function SignUp(props) {
     setSignupError(false);
     setShowSpinner(true);
     const response = await fetch(
-      'https://entertainment-app.onrender.com/user/signup',
+      'https://entertainment-app-tomisin.vercel.app/user/signup',
       {
         method: 'POST',
         headers: {
